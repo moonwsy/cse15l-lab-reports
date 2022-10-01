@@ -18,11 +18,17 @@
 2. cat - print the contents of hello.txt
 >![](cat.png)
 - **Part 4 - Moving Files with scp**
-1. create the WhereAmI.java on my desktop, open it in the VScode, run the WhereAmI program using the javac and java commands.
+1. Create the WhereAmI.java on my desktop, open it in the VScode, run the WhereAmI program using the javac and java commands.
 > ![](WhereAmI.png)
-2. run command below copy WhereAmI.jave to my home directory of ieng6, then run the WhereAmI program using the javac and java commands in the server 
->scp WhereAmI.java cs15lfa22bj@ieng6.ucsd.edu:~/
+2. Run command below copy WhereAmI.jave to my home directory of ieng6, then run the WhereAmI program using the javac and java commands in the server 
+>$ scp WhereAmI.java cs15lfa22bj@ieng6.ucsd.edu:~/
 > ![](server.png)
 - **Part 5 - Setting an SSH Key**
-- **Part 6 - Optimizing Remote Running **
-
+1. Generating public/private rsa key pair by run ssh-keygen
+> ![](password.png)
+2. Since I've done this part during lab, I try to run the command(ssh cs15lfa22bj@ieng6.ucsd.edu), no need to enter the password. What I did is to run command mkdir .ssh on server then command exit. Back on client run command $ scp /Users/joe/.ssh/id_rsa.pub cs15lfa22bj@ieng6.ucsd.edu:~/.ssh/id_rsa.pub. Then I'm able to from this client to the server without entering your password.
+> ![](nopassword.png)
+- **Part 6 - Optimizing Remote Running**
+1. Make a local edit to WhereAmI.java. Sice we copy this java file to my home directory previously, then we log in and see the list of the home directory on the remote server
+2. Copy it to the remote server and run it.
+> ![](part6.png)
