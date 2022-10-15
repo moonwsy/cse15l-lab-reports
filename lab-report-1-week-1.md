@@ -26,9 +26,11 @@
 - **Part 5 - Setting an SSH Key**
 1. Generating public/private rsa key pair by run ssh-keygen
 > ![](password.png)
-2. Since I've done this part during lab, I try to run the command(ssh cs15lfa22bj@ieng6.ucsd.edu), no need to enter the password. What I did is to run command mkdir .ssh on server then command exit. Back on client run command $ scp /Users/joe/.ssh/id_rsa.pub cs15lfa22bj@ieng6.ucsd.edu:~/.ssh/id_rsa.pub. Then I'm able to from this client to the server without entering your password.
+2. Since I've done this part during lab, I try to run the command(ssh cs15lfa22bj@ieng6.ucsd.edu), no need to enter the password. What I did is to run command mkdir .ssh on server then command exit. Back on client run command below, then I'm able to from this client to the server without entering your password.
+> $ scp /Users/joe/.ssh/id_rsa.pub cs15lfa22bj@ieng6.ucsd.edu:~/.ssh/id_rsa.pub. 
 > ![](nopassword.png)
 - **Part 6 - Optimizing Remote Running**
-1. Make a local edit to WhereAmI.java. Sice we copy this java file to my home directory previously, then we log in and see the list of the home directory on the remote server
-2. Copy it to the remote server and run it.
-> ![](part6.png)
+1. if we want to upload a java file from my client to the server, run it remotely, we did before, we need several steps to get there, see below:
+> ![](part6.1.png)
+2. But we have a optiaml way to do that, just need one step, see below:
+> ![](part6.2.png)
