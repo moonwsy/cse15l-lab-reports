@@ -3,7 +3,10 @@
 **Part 1**
 #### 
 ```
-ArrayList<String> query = new ArrayList<String>();
+class Handler implements URLHandler {
+    // The one bit of state on the server: a number that will be manipulated by
+    // various requests.
+    ArrayList<String> query = new ArrayList<String>();
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
             return String.format("Missing query");
@@ -14,25 +17,50 @@ ArrayList<String> query = new ArrayList<String>();
             if (url.getPath().contains("/add")) {
                 String[] parameters = url.getQuery().split("=");
                 query.add(parameters[1]);
-                return ("");
+                return ("added successfully");
             }
+            
         }
         else if (url.getPath().contains("/search")){
             String[] parameters = url.getQuery().split("=");
+            ArrayList<String> query1 = new ArrayList<String>();
             for(String i: query){
                 // System.out.println(i);
                 // boolean found = query.stream().anyMatch(s -> s.contains(parameters[1]));
                 if(i.contains(parameters[1])){
                     // System.out.println(i);
-                    return String.format(i);
+                    query1.add(i);
+                    //return String.format(i);
                 }
             }
+            // query1.toString();
+            return query1.toString();
         }
         return "404 Not Found!";
     }
+}
 ```
-> ![](part1-1.png)
-> ![](part1-2.png)
+> ![](part1.0.png)
+Method called: handleRequest
+- Values of relevant argument is url: http://localhost:1003
+- Values of relevant fields of the class: query is empty []
+- Values change or not: no
+> ![](part1.1.png)
+- Values of relevant argument is url: http://localhost:1003/add?s=anewstringtoadd
+- Values of relevant fields of the class: query is [anewstringtoadd]
+- Values change or not: change becasue we add one element to the array list query by enterting 'add?s=anewstringtoadd', query.add(parameters[1]) starts to work, add the 'anewstringtoadd' to the query, returns 'added successfully'.
+> ![](part1.2.png)
+- Values of relevant argument is url: http://localhost:1003/add?s=pineapple
+- Values of relevant fields of the class: query is [anewstringtoadd, pineapple]
+- Values change or not: change becasue we add one element to the array list query by enterting 'add?s=pineapple', query.add(parameters[1]) starts to work, add the 'pineapple' to the query, returns 'added successfully'.
+> ![](part1.3.png)
+- Values of relevant argument is url: http://localhost:1003/add?s=apple
+- Values of relevant fields of the class: query is [anewstringtoadd, pineapple, apple]
+- Values change or not: change becasue we add one element to the array list query by enterting 'add?s=apple', query.add(parameters[1]) starts to work, add the 'apple' to the query, returns 'added successfully'.
+> ![](part1.4.png)
+- Values of relevant argument is url: http://localhost:1003/search?s=app
+- Values of relevant fields of the class: query is [anewstringtoadd, pineapple]
+- Values change or not: not change after entering 'search?s=app' because we never change the query, we create the new array list called query1 to add these substring which contains 'app'.
 
 **Part 2**
 ### Array Methods
