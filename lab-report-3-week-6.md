@@ -3,8 +3,9 @@
 **Find -name**
 -why useful? because we can directly searche for files by their name.
 - Using find from command line to locate files by name, search for *.txt files in the technical/911report directory and all sub-directories.
+
 ```
-$ find technical/911report -name "*.txt"
+technical wangwenshuang$ find technical/911report -name "*.txt"
 
 technical/911report/chapter-13.4.txt
 technical/911report/chapter-13.5.txt
