@@ -11,7 +11,7 @@ step 1:
 > ![](vim-start.png)
 
 step 2:
-- /start<Enter>.
+- /start then enter.
 - Goal: To search the word that we want to change, syntax is / + searchword, the cursor postition is the first character of the searchword
 > ![](vim-p1-1.png)
 
@@ -21,7 +21,7 @@ step 3:
 > ![](vim-dw.png)
 
 step 4:
-- i then tap base,  then <Esc>
+- i then tap base,  then press esc
 - Goal: go to the insert mode add new word 'base' after the 'Path', then leave insert mode to normal mode
 > ![](vim-i+base.png)
 
@@ -36,7 +36,7 @@ step 6:
 > ![](vim-dw-2.png)
 
 step 7:
-- i then tap base,  then <Esc>
+- i then tap base,  then press esc
 - Goal: go to the insert mode add new word 'base' after the '= ', then leave insert mode to normal mode
 > ![](vim-i+base2.png)
 
@@ -51,17 +51,17 @@ step 9:
 > ![](vim-dw3.png)
 
 step 10:
-- i then tap base,  then <Esc>
+- i then tap base,  then press esc
 - Goal: go to the insert mode add new word 'base' after the '(', then leave insert mode to normal mode
 > ![](vim-i+base3.png)
 
 step 11:
-- :wq<Enter>
+- :wq then press enter
 - Goal: save and quit
 > ![](vim-wq.png)
 > ![](vim-save.png)
 
-step:  vim DocSearchServer.java -> /start<Enter> -> dw -> i -> base -> esc -> n -> dw -> i -> base -> esc -> n -> dw -> i -> base -> esc -> :wq<Enter>
+step:  vim DocSearchServer.java -> /start -> enter -> dw -> i -> base -> esc -> n -> dw -> i -> base -> esc -> n -> dw -> i -> base -> esc -> :wq -> enter
 
 
 **Part2**
