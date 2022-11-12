@@ -66,5 +66,7 @@ step:  vim DocSearchServer.java -> /start<Enter> -> dw -> i -> base -> esc -> n 
 
 **Part2**
 - The second one took me 3-5 mins, the first one took me longer than the second one, because we worked on the remote, so every change to the file will not save to the remote, we have to scp again to the remote, then can access the modified file.
+
 - I prefer the second one if I run remotely, because I don't have to scp my file to remote after editing it. Vim can directly change the file on the remote.
+
 - If I work on the local, I will not use vim to edit my file on the terminal. I don't have to consider how to save my file after editing on the local, becasue it's auto save.
