@@ -5,8 +5,9 @@
 - Demo: Changing the name of the start parameter and its uses to base
 
 step 1:
-- vim DocSearchServer.java, then press enter. 
+- vim DocSearchServer.java, then press < enter >. 
 - Goal: To enter the file then we're in the normal mode.
+
 
 > ![](vim-start.png)
 
