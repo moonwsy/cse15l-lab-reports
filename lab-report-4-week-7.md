@@ -5,14 +5,37 @@
 - Demo: Changing the name of the start parameter and its uses to base
 
 step 1:
-- vim DocSearchServer.java, then press (enter). 
-- Goal: To enter the file then we're in the normal mode.
+- vim D`<tab>`, then press `<enter>`. 
+- Goal: To enter the file then we're in the normal mode, the cursor position starts at the first character of the blew code.
 
 
-> ![](vim-start.png)
+```
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+
+class FileHelpers {
+    static List<File> getFiles(Path base) throws IOException {
+        File f = base.toFile();
+        List<File> result = new ArrayList<>();
+        if(f.isDirectory()) {
+            File[] paths = f.listFiles();
+            for(File subFile: paths) { 
+                result.addAll(getFiles(subFile.toPath()));
+            }
+        }
+        else {
+```
 
 step 2:
-- /start then enter.
+- /start then `<enter>`.
 - Goal: To search the word that we want to change, syntax is / + searchword, the cursor postition is the first character of the searchword
 > ![](vim-p1-1.png)
 
@@ -22,7 +45,7 @@ step 3:
 > ![](vim-dw.png)
 
 step 4:
-- i then tap base,  then press esc
+- i then tap base,  then press `<esc>`
 - Goal: go to the insert mode add new word 'base' after the 'Path', then leave insert mode to normal mode
 > ![](vim-i+base.png)
 
@@ -37,7 +60,7 @@ step 6:
 > ![](vim-dw-2.png)
 
 step 7:
-- i then tap base,  then press esc
+- i then tap base,  then press `<esc>`
 - Goal: go to the insert mode add new word 'base' after the '= ', then leave insert mode to normal mode
 > ![](vim-i+base2.png)
 
@@ -52,21 +75,21 @@ step 9:
 > ![](vim-dw3.png)
 
 step 10:
-- i then tap base,  then press esc
+- i then tap base,  then press `<esc>`
 - Goal: go to the insert mode add new word 'base' after the '(', then leave insert mode to normal mode
 > ![](vim-i+base3.png)
 
 step 11:
-- :wq then press enter
+- :wq then press `<enter>`
 - Goal: save and quit
 > ![](vim-wq.png)
 > ![](vim-save.png)
 
-step:  vim DocSearchServer.java -> /start -> enter -> dw -> i -> base -> esc -> n -> dw -> i -> base -> esc -> n -> dw -> i -> base -> esc -> :wq -> enter
+step:  vim D`<tab> <enter>` -> /start -> `<enter>` -> dw -> i -> base -> `<esc>` -> n -> dw -> i -> base -> `<esc>` -> n -> dw -> i -> base -> `<esc>` -> :wq -> `<enter>`
 
 
 **Part2**
-- The second one took me 3-5 mins, the first one took me longer than the second one, because we worked on the remote, so every change to the file will not save to the remote, we have to scp again to the remote, then can access the modified file.
+- The second one took me 3-5 mins, the first one took me longer than the second one, because we worked on the remote, so every change to the file will not save to the remote, we have to <kbd>scp</kbd> again to the remote, then can access the modified file.
 
 - I prefer the second one if I run remotely, because I don't have to scp my file to remote after editing it. Vim can directly change the file on the remote.
 
