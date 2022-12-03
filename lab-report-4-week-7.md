@@ -40,53 +40,33 @@ step 2:
 > ![](vim-p1-1.png)
 
 step 3:
-- dw
-- Goal: delete the characters of the word from the cursor position to the start of the next word
-> ![](vim-dw.png)
+- ce
+- Goal: deletes word 'start' and return insert mode
+> ![](ce.png)
 
 step 4:
-- i then tap base,  then press `<esc>`
-- Goal: go to the insert mode add new word 'base' after the 'Path', then leave insert mode to normal mode
-> ![](vim-i+base.png)
+- 'base' then '<esc>'
+- Goal: replaces to new word 'base'
+> ![](addbase.png)
 
 step 5:
-- n
+- n.
 - Goal: repeats the last search from the cursor's position down
-> ![](vim-n.png)
+> ![](n1.png)
 
 step 6:
-- dw
-- Goal: delete the characters of the word from the cursor position to the start of the next word
-> ![](vim-dw-2.png)
+- n.
+- Goal: repeats the last search from the cursor's position down
+> ![](n2.png)
 
 step 7:
-- i then tap base,  then press `<esc>`
-- Goal: go to the insert mode add new word 'base' after the '= ', then leave insert mode to normal mode
-> ![](vim-i+base2.png)
-
-step 8:
-- n
-- Goal: repeats the last search from the cursor's position down
-> ![](vim-n2.png)
-
-step 9:
-- dw
-- Goal: delete the characters of the word from the cursor position to the start of the next word
-> ![](vim-dw3.png)
-
-step 10:
-- i then tap base,  then press `<esc>`
-- Goal: go to the insert mode add new word 'base' after the '(', then leave insert mode to normal mode
-> ![](vim-i+base3.png)
-
-step 11:
 - :wq then press `<enter>`
 - Goal: save and quit
 > ![](vim-wq.png)
 > ![](vim-save.png)
 
-step:  $ vim D `<tab>` `<enter>` -> `/start`-> `<Enter>` -> ce -> i -> base -> `<Escape>` -> `n.`->`n.` -> `:wq` -> `<Enter>`
-
+step:  $ vim D `<tab>` `<enter>` -> `/start`-> `<Enter>` -> ce  -> base -> `<Escape>` -> `n.`->`n.` -> `:wq` -> `<Enter>`
+total: 12 keys pressed
 
 **Part2**
 - The second one took me 3-5 mins, the first one took me longer than the second one, because we worked on the remote, so every change to the file will not save to the remote, we have to <kbd>scp</kbd> again to the remote, then can access the modified file.
